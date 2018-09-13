@@ -1,5 +1,5 @@
 // alert("test");
-var zeichen = "bake";
+var zeichen = "up";
 
 
 //setzt Buttons zurück
@@ -88,35 +88,35 @@ function endepruefen() {
     var b9 = document.getElementById("9").value;
 
     //obere Reihe
-    if (((b1=="wake") || (b1=="bake")) && ((b1 == b2) && (b2 == b3))) {
+    if (((b1=="shut") || (b1=="up")) && ((b1 == b2) && (b2 == b3))) {
         popupzeigen(b1);
     }
     //linke Spalte
-    else if (((b1=="wake") || (b1=="bake")) && ((b1 == b4) && (b4 == b7))){
+    else if (((b1=="shut") || (b1=="up")) && ((b1 == b4) && (b4 == b7))){
         popupzeigen(b1);
     }
     //untere Reihe
-    else if (((b9=="wake") || (b9=="bake")) && ((b9 == b8) && (b8 == b7))){
+    else if (((b9=="shut") || (b9=="up")) && ((b9 == b8) && (b8 == b7))){
         popupzeigen(b9);
     }
     //rechte Spalte
-    else if (((b9=="wake") || (b9=="bake")) && ((b9 == b6) && (b6 == b3))){
+    else if (((b9=="shut") || (b9=="up")) && ((b9 == b6) && (b6 == b3))){
       popupzeigen(b9);
     }
     //mittlere Reihe
-    else if (((b4=="wake") || (b4=="bake")) && ((b4 == b5) && (b5 == b6))){
+    else if (((b4=="shut") || (b4=="up")) && ((b4 == b5) && (b5 == b6))){
       popupzeigen(b4);
     }
     //mittlere Spalte
-    else if (((b2=="wake") || (b2=="bake")) && ((b2 == b5) && (b5 == b8))){
+    else if (((b2=="shut") || (b2=="up")) && ((b2 == b5) && (b5 == b8))){
       popupzeigen(b2);
     }
     //1-9 Diagonale
-    else if (((b1=="wake") || (b1=="bake")) && ((b1 == b5) && (b5== b9))){
+    else if (((b1=="shut") || (b1=="up")) && ((b1 == b5) && (b5== b9))){
       popupzeigen(b1);
     }
     //7-3 Diagonale
-    else if (((b7=="wake") || (b7=="bake")) && ((b7 == b5) && (b5 == b3))){
+    else if (((b7=="shut") || (b7=="up")) && ((b7 == b5) && (b5 == b3))){
       popupzeigen(b7);
     }
     //unentschieden
@@ -180,12 +180,12 @@ function setzen(x, zeichen) {
 
 //welches Zeichen?
 function xoo(button) {
-    if (zeichen=="wake") {
-    zeichen="bake";
+    if (zeichen=="shut") {
+    zeichen="up";
     setzen(button, zeichen);
     }
-    else if (zeichen=="bake") {
-    zeichen="wake";
+    else if (zeichen=="up") {
+    zeichen="shut";
     setzen(button, zeichen);
     }
     }

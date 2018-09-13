@@ -5,7 +5,7 @@ header {
   position:fixed;
   left:0px;
   top:0px;
-  width:100%;
+  width:60%;
   height:60px;
   padding:5px;
   background-color:#00aaaa;
@@ -19,7 +19,7 @@ h1 {
 
 table {
    background-color:#00aaaa;
-   width:70%;
+   width:60%;
 }
 td {
   width:33.3333%;
@@ -30,7 +30,7 @@ input {
   height:100%;
   font-size:90px;
   border:0px;
-  background-color:#00bbbb;
+  background-color:#f4a442;
   color:#FFFFFF;
   transition-duration:0.3s;
 }
@@ -39,7 +39,7 @@ input:hover {
 }
 button {
   padding:5px;
-  background-color:#00bbbb;
+  background-color:#f4a442;
   border:0px;
   color:#FFFFFF;
   font-size:100%;
