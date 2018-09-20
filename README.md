@@ -1,6 +1,6 @@
 # Player vs Player Tic Tac Toe
 
-##Instruction
+## Instruction
 
 1. The game is played on a grid that's 3 squares by 3 squares.
 
