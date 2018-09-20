@@ -1,7 +1,6 @@
+var character = "up";
 
-var markUp = "up";
-
-function gameStart() {
+function resetToDefault() {
     var b1 = document.getElementById("1");
     var b2 = document.getElementById("2");
     var b3 = document.getElementById("3");
@@ -35,7 +34,7 @@ function gameStart() {
     document.getElementById("overlay").style.visibility = "hidden";
 }
 
-function buttonActivated() {
+function buttonsDeactivate() {
     var b1 = document.getElementById("1");
     var b2 = document.getElementById("2");
     var b3 = document.getElementById("3");
@@ -57,20 +56,24 @@ function buttonActivated() {
     b9.disabled = true;
 }
 
-function popupMark(gewinner) {
-      buttonActivated();
+function popUpShow(gewinner) {
+      //diable all buttons
+      buttonsDeactivate();
+
+      //replace Text
       popuptext = document.getElementById("text");
       popuptext.innerHTML = gewinner + " wins.";
 
-      //macht Popup sichtbar
+      //makes popup visible
       var pop = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
       pop.style.visibility = "visible";
       overlay.style.visibility ="visible"
 }
 
-function condition() {
-
+//find out if the game is over
+function stateCheck() {
+    //buttons states
     var b1 = document.getElementById("1").value;
     var b2 = document.getElementById("2").value;
     var b3 = document.getElementById("3").value;
@@ -81,93 +84,102 @@ function condition() {
     var b8 = document.getElementById("8").value;
     var b9 = document.getElementById("9").value;
 
+    //upper row
     if (((b1=="shut") || (b1=="up")) && ((b1 == b2) && (b2 == b3))) {
-        popupMark(b1);
+        popUpShow(b1);
     }
+    //left column
     else if (((b1=="shut") || (b1=="up")) && ((b1 == b4) && (b4 == b7))){
-        popupMark(b1);
+        popUpShow(b1);
     }
-
+    //bottom row
     else if (((b9=="shut") || (b9=="up")) && ((b9 == b8) && (b8 == b7))){
-        popupMark(b9);
+        popUpShow(b9);
     }
-
+    //right column
     else if (((b9=="shut") || (b9=="up")) && ((b9 == b6) && (b6 == b3))){
-      popupMark(b9);
+      popUpShow(b9);
     }
-
+    //middle row
     else if (((b4=="shut") || (b4=="up")) && ((b4 == b5) && (b5 == b6))){
-      popupMark(b4);
+      popUpShow(b4);
     }
-
+    //middle column
     else if (((b2=="shut") || (b2=="up")) && ((b2 == b5) && (b5 == b8))){
-      popupMark(b2);
+      popUpShow(b2);
     }
-
+    //1-9 diagonal
     else if (((b1=="shut") || (b1=="up")) && ((b1 == b5) && (b5== b9))){
-      popupMark(b1);
+      popUpShow(b1);
     }
-
+    //7-3 diagonal
     else if (((b7=="shut") || (b7=="up")) && ((b7 == b5) && (b5 == b3))){
-      popupMark(b7);
+      popUpShow(b7);
+    }
+    //draw
+//     else {
+//     alert("draw");
+//     }
     }
 
-function winning(x, markUp) {
+//insert x or y
+function setUp(x, character) {
      if (x==1) {
      var button = document.getElementById("1");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==2) {
      var button = document.getElementById("2");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==3) {
      var button = document.getElementById("3");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==4) {
      var button = document.getElementById("4");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==5) {
      var button = document.getElementById("5");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==6) {
      var button = document.getElementById("6");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==7) {
      var button = document.getElementById("7");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==8) {
      var button = document.getElementById("8");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
      else if (x==9) {
      var button = document.getElementById("9");
-     button.value = markUp;
+     button.value = character;
      button.disabled=true;
      }
-     condition();
+     stateCheck();
      }
 
+//select character
 function xoo(button) {
-    if (markUp=="shut") {
-    markUp="up";
-    winning(button, markUp);
+    if (character=="shut") {
+    character="up";
+    setUp(button, character);
     }
-    else if (markUp=="up") {
-    markUp="shut";
-    winning(button, markUp);
+    else if (character=="up") {
+    character="shut";
+    setUp(button, character);
     }
     }
